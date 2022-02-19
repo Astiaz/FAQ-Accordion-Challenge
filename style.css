@@ -75,15 +75,16 @@ body{
     width: inherit;
     
     width: 400px;
-    height: 530px;
+    height: 800px;
+    /* background-color: #5C3AA7; */
 
     position: absolute;
-    top: 150px;
+    top: 50px;
     left: 350px;
 
     background-image: url('./images/bg-pattern-desktop.svg');
-    background-position-x: -580px;
-    background-position-y: -310px;
+    background-position-x: -570px;
+    background-position-y: -190px;
     background-repeat: no-repeat;
     z-index: 5;
     overflow: hidden;
@@ -93,13 +94,12 @@ body{
     content: url('./images/illustration-box-desktop.svg');
     display: block;
     position: absolute;
-    left: 315px;
-    top: 350px;
+    left: 325px;
+    top: 365px;
     width: 250px;
     height: 250px;
     margin-left: -60px;
     z-index: 9;
-    /* background-color: aqua; */
 }
 
 .figure__image-woman{
