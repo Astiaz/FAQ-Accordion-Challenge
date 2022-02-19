@@ -1,0 +1,254 @@
+:root{
+    /* ## Colors */
+    
+    /* ### Primary */
+    /* #### Text */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+
+    /* #### Gradient */
+    
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+    /* ### Neutral */
+
+    /* #### Text */
+    
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    
+    /* #### Dividers */
+
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+
+    --Body-Copy: 12px;
+
+}
+
+
+body{
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    min-height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+    background-size: cover;
+}
+
+
+.FAQ-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    
+    width: 900px;
+    padding: 80px 0px;
+    
+    background-color: white;
+    border-radius: 20px;
+    
+    box-shadow: 0px 30px 40px #5C3AA7;
+}
+
+
+.FAQ__Title{
+    margin-top: 0;
+    font-size: 32px;
+}
+
+.figure__section{
+    overflow: hidden;
+    position: relative;
+    z-index: 6;
+}
+
+.FAQ-card::after{
+    content: "";
+    display: block;
+    width: inherit;
+    
+    width: 400px;
+    height: 530px;
+
+    position: absolute;
+    top: 150px;
+    left: 350px;
+
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-position-x: -580px;
+    background-position-y: -310px;
+    background-repeat: no-repeat;
+    z-index: 5;
+    overflow: hidden;
+ } 
+
+.FAQ-card::before {
+    content: url('./images/illustration-box-desktop.svg');
+    display: block;
+    position: absolute;
+    left: 315px;
+    top: 350px;
+    width: 250px;
+    height: 250px;
+    margin-left: -60px;
+    z-index: 9;
+    /* background-color: aqua; */
+}
+
+.figure__image-woman{
+    margin-left: -80px;
+}
+
+.accordion{
+    padding: 0;
+}
+
+.accordion__section{
+    width: 350px;
+    list-style: none;
+    padding: 16px 0px;
+    border-bottom: 1px solid var(--Light-grayish-blue);
+}
+
+.accordion__card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    
+    border: none;
+    color: var(--Very-dark-grayish-blue);
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.accordion__card:hover{
+    color: var(--Soft-red);
+}
+
+.active{
+    color: black;
+    font-weight: bold;
+}
+
+.content{
+    display: none;
+    width: 100%;
+    margin-top: 12px;
+    font-size: var(--Body-Copy);
+    color: var(--Dark-grayish-blue);
+}
+
+.accordion__icon{
+    transform: rotate(0deg);
+}
+
+@media (max-width: 375px) {
+
+    body{
+        box-sizing: border-box;
+        padding: 20px;
+        min-height: 120vh;
+    }
+    
+    /* CARD */
+
+    .FAQ-card{
+        display: flex;
+        flex-direction: column;        
+        
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* FIGURE SECTION */
+    
+    /* Boxes */
+    .figure__section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        position: relative;
+        top: -110px;
+        overflow: visible;
+        margin-bottom: -50px;
+    }
+
+    .figure__section::before{
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        
+        position: absolute;
+        left: 35px;
+        bottom: 20px;
+
+        background-image: url('./images/illustration-box-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 7;
+    }
+
+    .figure__section::after{
+        content: url('./images/bg-pattern-mobile.svg');
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 50px;
+        bottom: -40px;
+        z-index: -1;
+    }
+
+
+    .FAQ-card::after, .FAQ-card::before{
+        display: none;
+    } 
+
+    /* Image*/
+
+    .figure__image-woman{
+        width: 240px;
+        margin: 0;
+    }
+
+    /* FAQ SECTION */
+
+    .FAQ{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 0px 30px 30px 30px;
+    }
+
+    .FAQ__Title{
+        margin: 0;
+    }
+
+    .accordion, .accordion__section, .figure__section{
+        width: 100%;
+    }
+
+    .accordion__card{
+        display: flex;
+        align-items: center;
+    }
+
+
+}
